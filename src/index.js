@@ -1,17 +1,37 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import './App.css';
+class Items {
+    constructor(name) {
+      this.title = name;
+    }
+  
+    present() {
+      return 'Have to do ' + this.title;
+    }
+  }
+  
+  class ToDo extends Items {
+    constructor(name, start, end, description, comment) {
+      super(name);
+      this.start = start;
+      this.end = end;
+      this.description = description;
+      this.comment = comment;
+    }  
+    show() {
+         return React.createElement('p', {}, this.present() + ' starting ' + this.start + ' until ' + this.end + " " + this.description + " comment: " + this.comment);
+    }
+  }
+function todoListRender() {
+    var todo1 = new ToDo("React project", "August 19th", "August 31st", "Reactproject for learning", "for fun");
+    var renderString = todo1.show();
+    return ( 
+    <div className = "App">
+        <h1> Heelo dsfesefworld </h1> 
+        {renderString}
+    </div>
+    );
+}
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+ReactDOM.render(todoListRender(), document.getElementById('root'));
