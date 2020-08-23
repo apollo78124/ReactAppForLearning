@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Today from './App.js';
-
 import './App.css';
+
 class Items {
     constructor(name) {
       this.title = name;
