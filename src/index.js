@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Today from './App.js';
+
 import './App.css';
 class Items {
     constructor(name) {
@@ -28,10 +30,11 @@ function todoListRender() {
     var renderString = todo1.show();
     return ( 
     <div className = "App">
-        <h1> Heelo dsfesefworld </h1> 
+        <Today />
         {renderString}
     </div>
     );
 }
 
 ReactDOM.render(todoListRender(), document.getElementById('root'));
+
