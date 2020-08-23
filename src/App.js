@@ -12,7 +12,7 @@ class Today extends React.Component {
     render() {
     return <h2>Hi, today is {this.state.curTime}</h2>;
     
-        }
+    }
 }
 
 export default Today;

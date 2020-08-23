@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Today from './App.js';
+import Clock from './clock.js';
 import './App.css';
 
 class Items {
@@ -30,7 +31,7 @@ function todoListRender() {
     var renderString = todo1.show();
     return ( 
     <div className = "App">
-        <Today />
+        <Clock />
         {renderString}
     </div>
     );
