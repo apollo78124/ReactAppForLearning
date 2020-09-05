@@ -31,7 +31,7 @@ function todoListRender() {
     var renderString = todo1.show();
     return ( 
     <div className = "App">
-        <Clock />
+        <Clock favcol="yellow"/>
         {renderString}
     </div>
     );

@@ -4,8 +4,12 @@ class Clock extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        time: new Date().toLocaleString()
+        time: new Date().toLocaleString(),
+        clockColor: "blue"
       };
+    }
+    static getDerivedStateFromProps(props, state) {
+        return {clockColor: props.favcol };
     }
     componentDidMount() {
       this.intervalID = setInterval(
@@ -23,9 +27,10 @@ class Clock extends React.Component {
     }
     render() {
       return (
-        <p className="App-clock">
-          The time is {this.state.time}.
-        </p>
+        <div className="App-clock">
+          <h1>Clock is ticking... Hurry up! <br /> {this.state.time}</h1>
+          <p>The clock color is {this.state.clockColor}</p>
+        </div>
       );
     }
   }
