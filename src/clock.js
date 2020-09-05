@@ -29,7 +29,6 @@ class Clock extends React.Component {
       return (
         <div className="App-clock">
           <h1>Clock is ticking... Hurry up! <br /> {this.state.time}</h1>
-          <p>The clock color is {this.state.clockColor}</p>
         </div>
       );
     }

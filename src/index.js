@@ -2,37 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Today from './App.js';
 import Clock from './clock.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import ToDoBox from './ToDo.js';
 
-class Items {
-    constructor(name) {
-      this.title = name;
-    }
-  
-    present() {
-      return 'Have to do ' + this.title;
-    }
-  }
-  
-  class ToDo extends Items {
-    constructor(name, start, end, description, comment) {
-      super(name);
-      this.start = start;
-      this.end = end;
-      this.description = description;
-      this.comment = comment;
-    }  
-    show() {
-         return React.createElement('p', {}, this.present() + ' starting ' + this.start + ' until ' + this.end + " " + this.description + " comment: " + this.comment);
-    }
-  }
+
 function todoListRender() {
-    var todo1 = new ToDo("React project", "August 19th", "August 31st", "Reactproject for learning", "for fun");
-    var renderString = todo1.show();
+  var data = [
+    { id: 1, name: 'React App For Learning Project', start: '09/05/2020', end:'09/10/2020', description:'Test react app to learn react.', comment:'Has no backend.'},
+    { id: 2, name: 'Another react app for learning', start: '09/05/2020', end:'09/10/2020', description:'Test react app to learn react.', comment:'Has no backend.'},
+    { id: 3, name: 'Another 2 ', start: '09/05/2020', end:'09/10/2020', description:'Test react app to learn react.', comment:'Has no backend.'},
+    { id: 4, name: 'Another 3', start: '09/05/2020', end:'09/10/2020', description:'Test react app to learn react.', comment:'Has no backend.'},
+    { id: 5, name: 'React App 4 For Learning Project', start: '09/05/2020', end:'09/10/2020', description:'Test react app to learn react.', comment:'Has no backend.'},
+    { id: 6, name: 'React Adsefpp 5 For Learning Project', start: '09/05/2020', end:'09/10/2020', description:'Test react app to learn react.', comment:'Has no backend.'},
+    { id: 7, name: 'React App6 For Learning Project', start: '09/05/2020', end:'09/10/2020', description:'Test react app to learn react.', comment:'Has no backend.'},
+    { id: 8, name: 'React App For7 Learning Project', start: '09/05/2020', end:'09/10/2020', description:'Test react app to learn react.', comment:'Has no backend.'}
+  ];
     return ( 
     <div className = "App">
         <Clock favcol="yellow"/>
-        {renderString}
+        <ToDoBox data={data} />
     </div>
     );
 }
