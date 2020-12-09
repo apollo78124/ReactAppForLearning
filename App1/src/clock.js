@@ -27,8 +27,10 @@ class Clock extends React.Component {
     }
     render() {
       return (
-        <div className="App-clock">
-          <h1>Clock is ticking... Hurry up! <br /> {this.state.time}</h1>
+        <div className="col-md-5 offset-md-1">
+          <br />
+          <h2>Clock is ticking... Hurry up! <br /> Current Time: {this.state.time}</h2>
+          <br />
         </div>
       );
     }
