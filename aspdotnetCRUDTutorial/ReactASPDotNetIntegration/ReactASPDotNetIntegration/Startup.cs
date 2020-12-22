@@ -25,6 +25,14 @@ namespace ReactASPDotNetIntegration
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddSingleton<UserService>();
+            services.AddCors(o => o.AddPolicy("ReactPolicy", builder =>
+            {
+                builder.AllowAnyOrigin()
+                       .AllowAnyMethod()
+                       .AllowAnyHeader()
+                       .AllowCredentials();
+            }));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +61,8 @@ namespace ReactASPDotNetIntegration
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            app.UseCors("ReactPolicy");
         }
     }
 }
