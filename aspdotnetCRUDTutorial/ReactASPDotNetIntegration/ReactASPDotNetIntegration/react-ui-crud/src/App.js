@@ -5,8 +5,8 @@ import AppFooter from './components/AppFooter';
 class App extends Component {
   render() {
     return <Fragment>
-      <AppHeader />
-      <AppFooter />
+        <AppHeader />
+        <AppFooter />
     </Fragment>;
   }
 }
